@@ -50,7 +50,6 @@ public class BookManagerlmpl implements IBookManager {
 				System.out.println(list.get(i));
 			}
 		}
-
 	}
 
 	// 제목으로 책찾기
@@ -74,20 +73,12 @@ public class BookManagerlmpl implements IBookManager {
 	}
 
 	// 잡지 목록 좌르륵
-	public Book[] getMagazines() {
+	public void getMagazines() {
 
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i) instanceof Magazine)
 				System.out.println(list.get(i));
 		}
-
-		Book[] result = new Book[list.size()];
-
-		for (int i = 0; i < list.size(); i++) {
-			result[i] = list.get(i);
-		}
-
-		return result;
 
 	}
 

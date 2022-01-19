@@ -6,7 +6,7 @@ public class BookTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BookManagerlmpl bm =BookManagerlmpl.getInstance();
+		BookManagerlmpl bm = BookManagerlmpl.getInstance();
 		
 		Book b1 = new Book("1", "java세계", "종긔", "삼성", 500, "java", 3);
 		Book b2 = new Book("2", "python세계", "종긔", "삼성", 300, "python", 5);

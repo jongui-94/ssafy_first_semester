@@ -99,10 +99,16 @@ where continent like '%asia%'
 order by lifeexpectancy;
 
 # 19
-select name, gnp, gnpold, if(gnpold is null,"신규"),gnp-gnpold "gnp 향상"
+select name, gnp, gnpold, if(gnpold is null,"신규",gnp-gnpold) "gnp 향상"
 from country
 order by name;
 
 # 20
+select weekday('2020-05-05'), case when dayname('2020-05-05') = 'saturday'
+								then '불행'
+                                when dayname('2020-05-05') = 'sunday'
+                                then '불행'
+                                else '행복'
+							end '행복여부'
 
  

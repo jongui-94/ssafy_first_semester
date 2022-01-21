@@ -159,7 +159,7 @@ public class ProductMgrlmpl implements IProductMgr {
 		System.out.println("객체 정보를 파일에 저장 완료!");
 	}
 	//정보 불러오기
-	synchronized private void loadData() {
+	private synchronized void loadData() {
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {

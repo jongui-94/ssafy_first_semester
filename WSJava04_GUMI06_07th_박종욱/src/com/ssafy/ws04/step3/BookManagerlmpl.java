@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class BookManagerlmpl implements IBookManager {
+public class BookManagerlmpl extends Thread implements IBookManager {
 
 	private static BookManagerlmpl instance;
 
@@ -223,4 +223,5 @@ public class BookManagerlmpl implements IBookManager {
 			}
 		}
 	}
+	
 }

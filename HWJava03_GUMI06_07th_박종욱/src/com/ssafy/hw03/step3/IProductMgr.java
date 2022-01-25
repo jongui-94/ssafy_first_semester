@@ -1,7 +1,7 @@
 package com.ssafy.hw03.step3;
 
 public interface IProductMgr {
-	void add(Product pd);
-	void del(String num);
+	abstract void add(Product pd);
+	abstract void del(String num);
 
 }

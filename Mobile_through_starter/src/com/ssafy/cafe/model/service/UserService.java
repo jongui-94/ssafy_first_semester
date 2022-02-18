@@ -6,6 +6,7 @@ import com.ssafy.cafe.model.dto.User;
 public interface UserService {
     /**
      * 사용자 정보를 DB에 저장한다.
+     * INSERT
      * 
      * @param user
      */
@@ -13,6 +14,7 @@ public interface UserService {
 
     /**
      * id, pass에 해당하는 User 정보를 반환한다.
+     * SELECT
      * 
      * @param id
      * @param pass
@@ -24,6 +26,7 @@ public interface UserService {
     /**
      * id에 해당하는 사용자 정보를 삭제한다.
      * @param id
+     * DELETE
      */
     public void leave(String id);
     
@@ -31,6 +34,7 @@ public interface UserService {
      * 해당 아이디가 이미 사용 중인지를 반환한다.
      * @param id
      * @return
+     * SELECT
      */
     public boolean isUsedId(String id);
 

@@ -8,6 +8,7 @@ import com.ssafy.cafe.model.service.OrderService;
 import com.ssafy.cafe.model.service.ProductService;
 import com.ssafy.cafe.model.service.StampService;
 import com.ssafy.cafe.model.service.UserService;
+import com.ssafy.cafe.model.service.UserServiceImpl;
 
 
 
@@ -15,7 +16,7 @@ public abstract class AbstractServiceTest {
 
     public static User user = new User("id 01", "name 01", "pass 01", 0);
 
-    public UserService userService;
+    public UserService userService = UserServiceImpl.getInstance();
 
     public ProductService prodService;
 

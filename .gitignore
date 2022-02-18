@@ -1,2 +1,6 @@
-/.metadata/
+**/.settings/
+**/bin/
+.metadata/
 /.recommenders/
+**/.idea/
+**/Servers/

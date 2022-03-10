@@ -1,4 +1,4 @@
-package day01;
+package test_algorithm01;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;

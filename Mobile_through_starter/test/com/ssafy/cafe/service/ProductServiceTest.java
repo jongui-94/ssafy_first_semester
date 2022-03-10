@@ -17,6 +17,6 @@ class ProductServiceTest extends AbstractServiceTest{
         List<Product> list = prodService.getProductList();
         assertEquals(list.size(), 10);
         Product p = list.get(0);
-        assertEquals(p.getName(), "name 10");
+        assertEquals(p.getName(), "cookie");
     }
 }

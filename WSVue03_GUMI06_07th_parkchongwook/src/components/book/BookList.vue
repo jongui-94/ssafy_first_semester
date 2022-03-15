@@ -23,15 +23,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(book, index) in books" :key="index">
-                            <td>{{ index + 1 }}</td>
-                            <td>{{ book.isbn }}</td>
-                            <td><router-link :to="{name: 'book-detail', params: {isbn: book.isbn}}">
-                                    {{ book.title }}
-                                </router-link></td>
-                            <td>{{ book.author }}</td>
-                            <td>{{ book.price | priceFilter }}</td>
-                        </tr>
+                        <list-row
+                            v-for="(book, index) in books"
+                            :key="index"
+                            :no="`${index+1}`"
+                            :isbn="book.isbn"
+                            :title="book.title"
+                            :author="book.author"
+                            :price="book.price"
+                            />
                     </tbody>
                 </table>
             </div>
@@ -41,39 +41,27 @@
 
 
 <script>
-import http from "@/util/http-common.js"
+import ListRow from "@/components/book/include/ListRow.vue";
+import { mapGetters } from 'vuex';
 export default({
     name: 'book-list',
-    data() {
-        return {
-            books: []
-        };
+    components: {
+        ListRow
+    },
+
+    computed: {
+        ...mapGetters(["books"])
     },
     created() {
-        http
-            .get('/book')
-            .then(({ data }) =>{
-                this.books = data;
-            })
-            .catch(()=>{
-                alert("BookList.vue 에러");
-            });
-        
-        this.books.sort((a, b) => {
-            return -(a.price - b.price);
-        });
+        this.$store.dispatch("getBooks");
         
     },
     methods: {
         movePage() {
             this.$router.push({name : 'book-create'});
         }
-    },
-    filters: {
-        priceFilter: function(value){
-            if (!value) return value;
-            return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        },
+
     }
-})
+    
+});
 </script>

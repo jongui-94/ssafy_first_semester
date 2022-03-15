@@ -1,5 +1,5 @@
 <template>
-            <div class="regist">
+    <div class="regist">
             <h1 class="underline">SSAFY 도서 정보</h1>
             <div class="regist_form">
                 <label for="isbn">도서번호</label>
@@ -18,24 +18,17 @@
             </div>
         </div>
 </template>
+
 <script>
-import http from "@/util/http-common.js"
-export default({
-    data(){
-        return{
-            book: {}
-        }
+import http from "@/util/http-common"
+import { mapGetters } from 'vuex';
+export default {
+    name: "view-detail",
+    computed:{
+        ...mapGetters(["book"])
     },
 
-    created() {
-        http
-            .get(`/book/${this.$route.params.isbn}`)
-            .then(( {data} )=>{
-                this.book = data;
-            })
-    },
-
-    methods: {
+     methods: {
         moveList() {
             this.$router.push({name : 'book-list'});
         },              
@@ -56,7 +49,6 @@ export default({
         modify(){
             this.$router.push({name : 'book-modify', params: {isbn: this.$route.params.isbn}});
         }
-    },
-
-})
+    }
+}
 </script>

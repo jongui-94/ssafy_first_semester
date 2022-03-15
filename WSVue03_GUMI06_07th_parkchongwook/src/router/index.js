@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Book from '@/views/BookView.vue'
+import Book from '@/views/Book.vue'
 import BookList from '@/components/book/BookList.vue'
 import BookCreate from '@/components/book/BookCreate.vue'
-import BookDetail from '@/components/book/BookDetail.vue'
+import BookView from '@/components/book/BookView.vue'
 import BookModify from '@/components/book/BookModify.vue'
 Vue.use(VueRouter)
 
@@ -30,8 +30,8 @@ const routes = [
       },
       {
         path: 'view/:isbn',
-        name: 'book-detail',
-        component: BookDetail,
+        name: 'book-view',
+        component: BookView,
       },
       {
         path: 'modify/:isbn',

@@ -1,5 +1,5 @@
 <template>
-            <div class="regist">
+    <div class="regist">
             <h1 class="underline">SSAFY 도서 등록</h1>
             <div class="regist_form">
                 <label for="isbn">도서번호</label>
@@ -15,21 +15,15 @@
                 <button @click="checkValue">등록</button>
                 <button @click="moveList">목록</button>
             </div>
-        </div>  
-
+        </div>
 </template>
+
 <script>
 import http from "@/util/http-common.js"
-export default{
-     data(){
-        return{
-            isbn: '',
-            title: '',
-            author: '',
-            price: '',
-            content: ''
-        };
-    },
+
+export default {
+    name: "write-form",
+    
     methods: {
         checkValue(){
             let err = false;
@@ -76,9 +70,9 @@ export default{
                 })
                 .then(( data ) =>{
                     if(data === 'fail'){
-                        alert('등록 실패했습니다.')
+                        alert('등록 실패했습니다.');
                     }else{
-                        alert('등록 성공했습니다.')
+                        alert('등록 성공했습니다.');
                     }
                     this.moveList();
                 })
@@ -89,7 +83,5 @@ export default{
         moveList() {
             this.$router.push({name : 'book-list'});
         }
-    }
-}
-
+    }}
 </script>

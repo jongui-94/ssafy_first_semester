@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.xml.crypto.Data;
+
 public class PersonMgrImpl implements PersonMgr {
 	private List<Person> people;
 
@@ -49,7 +51,8 @@ public class PersonMgrImpl implements PersonMgr {
 		File f = new File(fileName);
 		if (f.exists()) {
 			try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
-				ois.readObject();
+				people = (List<Person>) ois.readObject();
+				//5번문제
 			} catch (ClassNotFoundException e) {
 				System.out.println("[SYSTEM] 파일 읽기 실패");
 			}
@@ -72,7 +75,7 @@ public class PersonMgrImpl implements PersonMgr {
 		List<Person> list = new ArrayList<>();
 		list.addAll(people);
 
-		Collections.sort(list);
+		Collections.sort(list, Collections.reverseOrder());
 
 		return list;
 	}

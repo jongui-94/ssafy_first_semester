@@ -16,7 +16,7 @@ public class RegionMgrImpl implements RegionMgr {
 	}
 	
 	public static RegionMgr getInstance() {
-		if (instance != null) {
+		if (instance == null) {
 			instance = new RegionMgrImpl();
 		}
 		
@@ -51,7 +51,7 @@ public class RegionMgrImpl implements RegionMgr {
 
 	@Override
 	public void deleteByStudentCount(int studentCount) {
-		for (int i = 0; i < orgs.size(); i++) {
+		for (int i = orgs.size()-1; i >= 0; i--) {
 			if (orgs.get(i).getStudentCount() == studentCount) {
 				orgs.remove(i);
 			}
@@ -61,7 +61,7 @@ public class RegionMgrImpl implements RegionMgr {
 	@Override
 	public Region search(Region o) {
 		for (Region org : orgs) {
-			if (org == o) {
+			if (org.getName() == o.getName()) {
 				return org;
 			}
 		}

@@ -5,6 +5,8 @@ public class Subject {
 	private int level;
 
 	public Subject() {
+		this.name = "";
+		int level = 0;
 	}
 
 	public Subject(String name, int level) {

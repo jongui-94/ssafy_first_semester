@@ -26,6 +26,7 @@ public class RegionTest extends AbstractTest {
 
 		// 서울 생성
 		omgr.add(new Seoul("서울", 30, "1"));
+		
 
 		// 구미 생성
 		omgr.add(new Gumi("구미", 20, "구미1반", 22, 2));

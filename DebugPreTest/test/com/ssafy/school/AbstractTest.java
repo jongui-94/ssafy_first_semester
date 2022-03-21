@@ -12,11 +12,11 @@ import com.ssafy.school.subject.SubjectMgrImpl;
 
 @TestMethodOrder(value = MethodOrderer.OrderAnnotation.class)
 public abstract class AbstractTest {
-	
+
 	RegionMgr omgr = RegionMgrImpl.getInstance();
-	
+
 	PersonMgr pmgr = PersonMgrImpl.getInstance();
 
 	SubjectMgr vmgr = new SubjectMgrImpl();
-	
+
 }

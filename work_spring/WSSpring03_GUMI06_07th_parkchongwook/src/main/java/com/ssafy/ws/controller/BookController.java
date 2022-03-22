@@ -94,9 +94,7 @@ public class BookController {
 	public String doRegist(@ModelAttribute Book book) {
 		if(book.getPrice() == null) {
 			System.out.println("없지롱");
-		}
-		else {
-			System.out.println(book);
+			//여기서 
 		}
 		return "regist_result";
 	}

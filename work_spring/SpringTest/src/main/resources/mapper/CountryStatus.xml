@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ssafy.springtest.mapper.CountryStatusMapper">
+	<!-- vue_board 테이블 전체 게시물을 가져오기 -->
+	<select id="search" resultType="CountryStatusDto">
+		select * from country_status
+	</select>
+	
+	<!-- vue_board 테이블에 글 등록하기 -->
+	<insert id="insert" parameterType="CountryStatusDto" useGeneratedKeys="true" keyProperty="no">
+		insert into country_status(cname, patient, rcode)
+		values (#{cname}, #{patient}, #{rcode}
+	</insert>
+	
+	<!-- 글 하나를 상세 조회 -->
+	<select id="select" parameterType="string" resultType="CountryStatusDto">
+		select * from country_status
+		where seq = #{seq}
+	</select>
+	
+	<!-- vue_board 정보를 수정한다. -->
+	<update id="update" parameterType="CountryStatusDto">
+		update county_status
+		set
+			cname = #{cname},
+			patient = #{patient},
+			rcode = #{rcode}
+		where seq = #{seq}
+	</update>
+	
+	<!-- vue_board 글 하나를 삭제한다. -->
+	<delete id="delete" parameterType="string">
+		delete from country_status
+		where seq = #{seq}
+	</delete>
+</mapper>

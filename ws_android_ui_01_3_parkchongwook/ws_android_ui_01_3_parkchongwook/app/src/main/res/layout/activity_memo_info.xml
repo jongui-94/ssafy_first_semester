@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/firstMemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1번 메모"/>
+
+    <EditText
+        android:id="@+id/memo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/secondMemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2번 메모"/>
+
+    <EditText
+        android:id="@+id/memo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/thirdMemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3번 메모"/>
+
+    <EditText
+        android:id="@+id/memo3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:text="돌아가기" />
+
+
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/MainFragment"
+        android:icon="@drawable/outline_speaker_notes_black_24"
+        android:title="상세정보"/>
+
+    <item
+        android:id="@+id/StoreFragment"
+        android:icon="@drawable/outline_storefront_black_24"
+        android:title="상가정보"/>
+</menu>

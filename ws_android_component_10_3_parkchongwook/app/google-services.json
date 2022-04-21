@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "357130392491",
+    "project_id": "androidhomework-e4f9f",
+    "storage_bucket": "androidhomework-e4f9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357130392491:android:467ef023c26950a92fb8ee",
+        "android_client_info": {
+          "package_name": "com.ssafy.cleanstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357130392491-ejvp6kos487bgfmk2s22m9g3gnul5nqm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssafy.cleanstore",
+            "certificate_hash": "c0e8970de004530bcedfd77a6f9ee7abc350a9e1"
+          }
+        },
+        {
+          "client_id": "357130392491-146ver46oej63fojlsajfi1osjbmo54d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2YbsdJzSNTTtS58yJwtzpC7kemOmoJxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357130392491-146ver46oej63fojlsajfi1osjbmo54d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -63,7 +63,7 @@ class StuffDao {
     // 물품 조회 method
     fun stuffSelectAll(): MutableList<Stuff> {
         val list: ArrayList<Stuff> = arrayListOf()
-        sqlDB.rawQuery("SELECT $STUFF_ID, $STUFF_NAME, $STUFF_CNT FROM $TABLE_NAME",null).use{
+        sqlDB.rawQuery("SELECT $STUFF_ID, $STUFF_NAME, $STUFF_CNT, $STUFF_DATE FROM $TABLE_NAME",null).use{
             if(it.moveToFirst()){
                 do{
                     list.add(Stuff(it.getInt(0), it.getString(1), it.getInt(2), it.getString(3)))

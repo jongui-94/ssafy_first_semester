@@ -17,6 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.normal.TedPermission
 import com.ssafy.cleanstore.R
+import com.ssafy.cleanstore.StoreInfo
 import com.ssafy.cleanstore.databinding.FragmentStoreBinding
 import com.ssafy.cleanstore.stuff.StuffActivity
 
@@ -34,10 +35,10 @@ class StoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return FragmentStoreBinding.inflate(inflater, container, false).apply {
-            tvStoreName.text = "싸피벅스"
-            tvStoreTel.text = "010-1234-5678"
-            tvStoreLat.text = "36.10830144233874"
-            tvStoreLng.text = "128.41827450414362"
+            tvStoreName.text = StoreInfo.STORE_NAME
+            tvStoreTel.text = StoreInfo.STORE_TEL
+            tvStoreLat.text = StoreInfo.STORE_LATITUDE.toString()
+            tvStoreLng.text = StoreInfo.STORE_LONGITUDE.toString()
 
             layoutStoreInfo.setOnClickListener {
                 Intent(ctx, StuffActivity::class.java).apply {
@@ -45,26 +46,37 @@ class StoreFragment : Fragment() {
                 }
             }
 
-            btnStoreSaveTel.setOnClickListener {
-                val permissionlistener = object : PermissionListener {
-                    override fun onPermissionGranted() {
-                        addContacts(tvStoreName.text.toString(), tvStoreTel.text.toString())
-                    }
+            //권한 리스너
+            val permissionlistener = object : PermissionListener {
+                override fun onPermissionGranted() {
+                    //권한 허용시
+                    addContacts(
+                        storeName =  tvStoreName.text.toString(),
+                        storeTel = tvStoreTel.text.toString()
+                    )
 
-                    override fun onPermissionDenied(deniedPermissions: List<String>) {
-                        Toast.makeText(ctx,
-                            "연락처 쓰기 접근 권한을 허가해주세요",
-                            Toast.LENGTH_SHORT)
-                            .show()
-                    }
                 }
 
+                override fun onPermissionDenied(deniedPermissions: List<String>) {
+                    Toast.makeText(requireContext(),
+                        "연락처 접근 권한을 허가해주세요",
+                        Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+
+            //버튼 클릭시
+            storeButton.setOnClickListener {
+
+                //권한 팝업
                 TedPermission.create()
                     .setPermissionListener(permissionlistener)
                     .setDeniedMessage("권한을 허용해주세요. [설정] > [앱 및 알림] > [고급] > [앱 권한]")
                     .setPermissions(Manifest.permission.WRITE_CONTACTS)
                     .check()
             }
+
+
         }.root
     }
 

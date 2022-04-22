@@ -53,15 +53,15 @@
             app:layout_constraintTop_toBottomOf="@id/tv_store_lat"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <Button
-            android:id="@+id/btn_store_save_tel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="연락처에 저장"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_store_lng"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/storeButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_store_info"
+        android:text="연락처에 저장"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

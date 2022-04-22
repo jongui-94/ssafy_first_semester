@@ -30,6 +30,7 @@ class StuffActivity : AppCompatActivity() {
         binding = ActivityStuffBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         // ListView 연결
         listView = findViewById(R.id.listview_stuff_stuff)
 
@@ -53,7 +54,9 @@ class StuffActivity : AppCompatActivity() {
                     }
 
                     ActionFlag.REGISTER -> {
-
+                        /*val name = intent.getStringExtra("OName")
+                        val count = intent.getIntExtra("OCount", -1)
+                        stuffList.add(Stuff(name, count))*/
                         val stuff = intent.getSerializableExtra("stuff") as Stuff
                         BoundServiceConnection.myService.stuffInsert(stuff)
                     }
@@ -83,11 +86,11 @@ class StuffActivity : AppCompatActivity() {
         Intent(this, StuffEditActivity::class.java).apply {
 
             // 물품 등록
-            binding.faStuffRegister.setOnClickListener {
+            binding.btnRegister.setOnClickListener {
                 // 값의 초기화
                 /*putExtra("Name", "")
                 putExtra("Count", -1)*/
-                putExtra("stuff", Stuff("", -1, ""))
+                putExtra("stuff", Stuff("", -1,""))
                 putExtra("ActionFlag", ActionFlag.REGISTER)
                 stuffEditLauncher.launch(this)
             }

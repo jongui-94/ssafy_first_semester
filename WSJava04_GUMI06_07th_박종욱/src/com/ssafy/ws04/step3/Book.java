@@ -10,6 +10,7 @@ public class Book implements Serializable{
 	private int price;
 	private String desc;
 	private int quantity;
+	private String category;
 	
 	public Book() {}
 
